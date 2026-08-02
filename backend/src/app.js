@@ -13,6 +13,10 @@ app.use(express.json());
 
 app.use("/api", routes);
 
+app.get("/", (req, res) => {
+  res.json({ success: true, message: "ThumbStack API is running" });
+});
+
 app.use(notFoundHandler);
 app.use(errorHandler);
 
